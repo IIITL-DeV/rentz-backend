@@ -8,6 +8,7 @@ const userSchema = Schema({
         lowercase:true,
         required:true,
     },
+    imageUrl:String,
     contact:{
         type:String,
         required:true,
@@ -32,6 +33,15 @@ const userSchema = Schema({
 },
 { timestamps: true }
 )
+
+userSchema.methods.toJSON = function(){
+    const user = this
+    const userObject = user.toObject()
+    delete userObject.password;
+
+    return userObject
+}
+
 
 userSchema.statics.getAllUsers = async () =>{
     const flats = await User.find();
