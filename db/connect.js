@@ -1,14 +1,3 @@
-// const mongoose = require('mongoose');
-// require('dotenv').config();
-
-// mongoose.connect(process.env.MONGODB_URI,{useNewUrlParser: true, useUnifiedTopology: true},(err)=>{
-//     if(!err)
-//     console.log("connected");
-//     else console.log("not connected");
-// })
-
-// module.exports = mongoose;
-
 const mongoose = require('mongoose');
 require('dotenv').config();
 mongoose.

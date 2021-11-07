@@ -1,6 +1,5 @@
 const jwt = require('jsonwebtoken');
 const createError = require('http-errors');
-require('dotenv').config();
 const verifyAccessToken = (req, res, next) => {
     if (!req.headers['authorization']) return next(createError.Unauthorized())
     const authHeader = req.headers['authorization'].split(' ');
@@ -12,7 +11,7 @@ const verifyAccessToken = (req, res, next) => {
                 return next(createError.Unauthorized(err.message))
             }
         }
-        req.payload = payload
+        req.payload = payload;
         next();
     })
 }
