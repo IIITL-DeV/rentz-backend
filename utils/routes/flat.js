@@ -4,7 +4,7 @@ const router = require('express').Router();
 router.get('/',async (req,res,next)=>{
     if(Object.keys(req.query).length !== 0) {next();return;}
     try{
-        const flats = await Flat.getAllFlats();
+        let flats = await Flat.getAllFlats();
         res.status(200).send({flats});
     }
     catch(e){

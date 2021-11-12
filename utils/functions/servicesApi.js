@@ -6,7 +6,7 @@ const fetchSerevicesData = async (services) => {
     const data = {};
     try{
         if(services.includes('flat')){
-            const flat = await Flat.find().limit(20).where('amount').sort({amount:1}).populate('contact');
+            let flat = await Flat.find().limit(20).where('amount').sort({amount:1}).populate('contact');
             data['flat'] = flat;
             // console.log(flat);
         }

@@ -26,7 +26,7 @@ router.post('/user/add',async (req,res)=>{
     const user = new User(req.body);
 
     try{
-        const result = await user.save();
+        let result = await user.save();
         res.status(201).send(result);
     }
     catch(e)
