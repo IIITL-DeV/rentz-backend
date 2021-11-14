@@ -24,12 +24,12 @@ const flatSchema = new Schema({
 })
 
 flatSchema.statics.getAllFlats = async () =>{
-    const flats = await Flat.find().populate('contact');
+    let flats = await Flat.find().populate('contact');
     return flats;
 }
 
 flatSchema.statics.getFlat = async (id) =>{
-    const flat = await Flat.findById(id).populate('contact');
+    let flat = await Flat.findById(id).populate('contact');
     return flat;
 }
 

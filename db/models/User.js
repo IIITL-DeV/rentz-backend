@@ -44,12 +44,12 @@ userSchema.methods.toJSON = function(){
 
 
 userSchema.statics.getAllUsers = async () =>{
-    const flats = await User.find();
+    let flats = await User.find();
     return flats;
 }
 
 userSchema.statics.getUser = async (id) =>{
-    const user = await User.findById(id);
+    let user = await User.findById(id);
     return user;
 }
 
